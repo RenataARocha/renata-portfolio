@@ -1,0 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* estilo básico do nav */
+.header .nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-whats {
+  background: #25D366;
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
