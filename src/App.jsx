@@ -220,7 +220,55 @@ export default function Portfolio() {
         </div>
       </section>
 
+       {/* HABILIDADES */}
+      <section id="habilidades" className="py-20 px-4 relative">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Minhas Habilidades</h2>
 
+          <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl">
+            <div className="space-y-6">
+              {skills.map((skill, index) => (
+                <div key={index} className="group">
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold text-gray-200 group-hover:text-orange-500 transition-colors">{skill.name}</span>
+                    <span className="text-orange-500">{skill.level}%</span>
+                  </div>
+
+                  <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-orange-600 to-red-600 rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-orange-900/50" style={{ width: `${skill.level}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+ {/* FAQ */}
+      <section id="faq" className="py-20 px-4 relative">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Perguntas Frequentes</h2>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-gray-900/50 backdrop-blur-lg rounded-xl border border-orange-900/30 shadow-lg overflow-hidden hover:border-orange-800/50 transition-all">
+
+                <button onClick={() => toggleFaq(index)} className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-800/50 transition">
+                  <span className="font-semibold text-left text-gray-200">{faq.question}</span>
+                  <ChevronDown size={20} className={`text-orange-500 transition-transform ${faqOpen[index] ? 'rotate-180' : ''}`} />
+                </button>
+
+                {faqOpen[index] && (
+                  <div className="px-6 pb-4 text-gray-400 border-t border-orange-900/30 pt-4 animate-fade-in">{faq.answer}</div>
+                )}
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
 
     </div>
   );
