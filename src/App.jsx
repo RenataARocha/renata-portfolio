@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, Code, Sparkles } from 'lucide-react';
+import {Download, Mail, Github, Linkedin} from 'lucide-react';
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ export default function Portfolio() {
       <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 px-4 text-center relative">
         <div className="max-w-4xl mx-auto relative z-10">
           
-          <div className="mb-6">
+          <div className="mb-6 animate-float">
             <div className="w-40 h-40 mx-auto bg-gradient-to-br from-orange-500 to-red-500 rounded-full p-1 shadow-2xl shadow-orange-900/50">
               <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
                 <Code size={56} className="text-orange-500" />
@@ -56,16 +57,32 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-fade-in">
             Olá, sou Renata
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-4">Desenvolvedora Front-end</p>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Crio sites e aplicações modernas, responsivas e com experiências encantadoras.
+          <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in" style={{animationDelay: '0.2s'}}>Desenvolvedora Front-end</p>
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.4s'}}>
+            Crio sites e aplicações modernas, responsivas e com experiências encantadoras.  
+            Transformo ideias em interfaces reais, organizadas e cheias de vida — com foco em quem vai usar.
           </p>
+
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <button onClick={() => scrollToSection('projetos')} className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all">Ver Projetos</button>
+            <a href="/curriculo.pdf" download className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2">
+              <Download size={20} /> Baixar Currículo
+            </a>
+          </div>
+
+          <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <a href="https://github.com" target="_blank" className="hover:text-orange-500 hover:scale-110 transition-all"><Github size={24} /></a>
+            <a href="https://linkedin.com" target="_blank" className="hover:text-orange-500 hover:scale-110 transition-all"><Linkedin size={24} /></a>
+            <a href="mailto:contato@renata.com" className="hover:text-orange-500 hover:scale-110 transition-all"><Mail size={24} /></a>
+          </div>
+
         </div>
       </section>
+
 
       {/* SOBRE */}
       <section id="sobre" className="py-20 px-4 relative">
