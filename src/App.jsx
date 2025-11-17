@@ -1,14 +1,79 @@
 import React, { useState } from "react";
-import { Menu, X, Code, Sparkles } from 'lucide-react';
-import {Download, Mail, Github, Linkedin} from 'lucide-react';
+import { Menu, X, Download, MessageCircle, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart } from 'lucide-react';
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState({});
+
+  const toggleFaq = (index) => {
+    setFaqOpen(prev => ({ ...prev, [index]: !prev[index] }));
+  };
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
+
+  const projects = [
+    {
+      title: "Organizadora do Lar",
+      description: "Aplicação SPA completa para gerenciamento de tarefas, metas, temas personalizados e banco de dados.",
+      tech: ["HTML", "CSS", "JavaScript", "React", "IndexedDB"],
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=500&h=300&fit=crop"
+    },
+    {
+      title: "Conversor de Moedas",
+      description: "Conversor totalmente responsivo com integração de API e acessibilidade.",
+      tech: ["HTML", "CSS", "JavaScript", "API"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop"
+    },
+    {
+      title: "Easy Shopping via Mobile",
+      description: "Interface mobile-first moderna e leve, feita com HTML, CSS e práticas de UI.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
+    },
+    {
+      title: "Réplica do Site da Nike",
+      description: "Projeto avançado de responsividade com múltiplos breakpoints e design fiel ao original.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3c59?w=500&h=300&fit=crop"
+    }
+  ];
+
+  const skills = [
+    { name: "HTML", level: 95 },
+    { name: "CSS", level: 92 },
+    { name: "JavaScript", level: 85 },
+    { name: "React", level: 78 },
+    { name: "Git & GitHub", level: 88 },
+    { name: "Tailwind CSS", level: 80 },
+    { name: "Bootstrap", level: 60 },
+    { name: "Vue.js (estudando)", level: 40 }
+  ];
+
+  const faqs = [
+    {
+      question: "Você desenvolve sites completos?",
+      answer: "Sim! Crio sites responsivos, modernos, leves e funcionais — desde landing pages até sistemas mais completos."
+    },
+    {
+      question: "Quais tecnologias você usa?",
+      answer: "HTML, CSS, JavaScript, React, Tailwind, Git, APIs REST, Bootstrap, Vue.js (aprendizado contínuo)."
+    },
+    {
+      question: "Você oferece suporte?",
+      answer: "Claro! Após a entrega ofereço suporte inicial e também pacotes opcionais de manutenção."
+    },
+    {
+      question: "Como funciona o processo?",
+      answer: "Entendo o projeto, crio estrutura, passo pelos layouts, desenvolvo, faço testes, apresento e ajusto até ficar perfeito."
+    },
+    {
+      question: "Quais tipos de projetos você aceita?",
+      answer: "Portfólios, sites de negócios, e-commerces simples, sistemas de gestão, automações e páginas customizadas."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -96,7 +161,8 @@ export default function Portfolio() {
             </p>
 
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              Trabalho diariamente com HTML, CSS, JavaScript e React, criando projetos reais como aplicativos de organização, conversores, sistemas e sites completos.
+              Trabalho diariamente com HTML, CSS, JavaScript e React, criando projetos reais como aplicativos de organização, conversores, sistemas e sites completos.  
+              Também estudo Vue.js e Bootstrap, sempre buscando evoluir com consistência e foco.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -119,6 +185,42 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* PROJETOS */}
+      <section id="projetos" className="py-20 px-4 relative">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Projetos em Destaque</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div key={index} className="group bg-gray-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-orange-900/30 hover:border-orange-700/60 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-900/30">
+                
+                <div className="h-48 overflow-hidden relative">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-orange-500 group-hover:text-red-500 transition-colors">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className="px-3 py-1 bg-orange-900/30 rounded-full text-sm text-orange-400 border border-orange-800/40 hover:bg-orange-800/40 transition-colors">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
 
     </div>
   );
