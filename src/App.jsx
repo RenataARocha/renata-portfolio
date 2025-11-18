@@ -78,6 +78,19 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-black text-white">
 
+      {/* FUNDO COM ANIMAÇÕES - CORAL/SALMÃO */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Bolhas piscando */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-24 right-12 w-96 h-96 bg-red-500 rounded-full mix-blend-screen filter blur-3xl opacity-25 animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-pink-600 rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-pulse" style={{animationDelay: '2s'}}></div>
+        
+        {/* Partículas flutuantes */}
+        <div className="absolute top-40 left-1/4 w-2 h-2 bg-orange-500 rounded-full animate-ping opacity-50"></div>
+        <div className="absolute top-60 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-ping opacity-50" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-pink-500 rounded-full animate-ping opacity-50" style={{animationDelay: '1s'}}></div>
+      </div>
+
       {/* NAV */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-lg z-50 border-b border-orange-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,6 +106,10 @@ export default function Portfolio() {
             <div className="hidden md:flex items-center space-x-8">
               <button onClick={() => scrollToSection('inicio')} className="hover:text-orange-500 transition">Início</button>
               <button onClick={() => scrollToSection('sobre')} className="hover:text-orange-500 transition">Sobre</button>
+              <button onClick={() => scrollToSection('projetos')} className="hover:text-orange-500 transition">Projetos</button>
+              <button onClick={() => scrollToSection('habilidades')} className="hover:text-orange-500 transition">Habilidades</button>
+              <button onClick={() => scrollToSection('faq')} className="hover:text-orange-500 transition">FAQ</button>
+              <button onClick={() => scrollToSection('contato')} className="hover:text-orange-500 transition">Contato</button>
             </div>
 
             <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
@@ -106,9 +123,27 @@ export default function Portfolio() {
           <div className="md:hidden bg-black/95 backdrop-blur-lg border-t border-orange-900/30 px-4 py-4 space-y-3">
             <button onClick={() => scrollToSection('inicio')} className="block w-full text-left py-2 hover:text-orange-500 transition">Início</button>
             <button onClick={() => scrollToSection('sobre')} className="block w-full text-left py-2 hover:text-orange-500 transition">Sobre</button>
+            <button onClick={() => scrollToSection('projetos')} className="block w-full text-left py-2 hover:text-orange-500 transition">Projetos</button>
+            <button onClick={() => scrollToSection('habilidades')} className="block w-full text-left py-2 hover:text-orange-500 transition">Habilidades</button>
+            <button onClick={() => scrollToSection('faq')} className="block w-full text-left py-2 hover:text-orange-500 transition">FAQ</button>
+            <button onClick={() => scrollToSection('contato')} className="block w-full text-left py-2 hover:text-orange-500 transition">Contato</button>
           </div>
         )}
       </nav>
+
+      {/* WHATSAPP */}
+      <a
+        href="https://wa.me/5584999999999"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 group animate-bounce"
+        style={{animationDuration: '3s'}}
+      >
+        <MessageCircle size={28} className="group-hover:rotate-12 transition-transform" />
+        <span className="absolute -top-10 right-0 bg-gray-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+          Fale comigo!
+        </span>
+      </a>
 
       {/* HERO */}
       <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 px-4 text-center relative">
@@ -147,7 +182,6 @@ export default function Portfolio() {
 
         </div>
       </section>
-
 
       {/* SOBRE */}
       <section id="sobre" className="py-20 px-4 relative">
@@ -220,7 +254,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-       {/* HABILIDADES */}
+      {/* HABILIDADES */}
       <section id="habilidades" className="py-20 px-4 relative">
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Minhas Habilidades</h2>
@@ -245,7 +279,7 @@ export default function Portfolio() {
         </div>
       </section>
 
- {/* FAQ */}
+      {/* FAQ */}
       <section id="faq" className="py-20 px-4 relative">
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Perguntas Frequentes</h2>
@@ -269,6 +303,63 @@ export default function Portfolio() {
 
         </div>
       </section>
+
+      {/* CONTATO */}
+      <section id="contato" className="py-20 px-4 relative">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Vamos Trabalhar Juntos?</h2>
+
+          <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl text-center">
+            <p className="text-lg text-gray-300 mb-8">
+              Me chama e vamos conversar sobre seu projeto!  
+              Adoro transformar ideias em algo bonito, funcional e real.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="https://wa.me/5584999999999" target="_blank" className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-green-900/50 transition-all flex items-center gap-2">
+                <MessageCircle size={20} /> WhatsApp
+              </a>
+
+              <a href="mailto:contato@renata.com" className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all flex items-center gap-2">
+                <Mail size={20} /> Email
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-8 px-4 border-t border-orange-900/30 text-center relative">
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <span className="text-gray-400">Feito com</span>
+          <Heart size={16} className="text-orange-500 fill-orange-500 animate-pulse" />
+          <span className="text-gray-400">por Renata Rocha</span>
+        </div>
+
+        <p className="text-gray-500 text-sm">© 2024 Renata Rocha. Todos os direitos reservados.</p>
+      </footer>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
 
     </div>
   );
