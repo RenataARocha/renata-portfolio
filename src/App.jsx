@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Menu, X, Download, MessageCircle, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart } from 'lucide-react';
+import { Menu, X, Download, MessageCircle, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart, MessageCircleMore } from 'lucide-react';
+
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -94,25 +95,26 @@ export default function Portfolio() {
   const faqs = [
     {
       question: "Você desenvolve sites completos?",
-      answer: "Sim! Crio sites responsivos, modernos, leves e funcionais — desde landing pages até sistemas mais completos."
+      answer: "Sim! Crio sites responsivos, modernos, leves e funcionais, desde landing pages até páginas institucionais mais completas."
     },
     {
       question: "Quais tecnologias você usa?",
-      answer: "HTML, CSS, JavaScript, React, Tailwind, Git, APIs REST, Bootstrap, Vue.js (aprendizado contínuo)."
+      answer: "HTML, CSS, JavaScript, React, Tailwind, Git e consumo de APIs REST."
     },
     {
       question: "Você oferece suporte?",
-      answer: "Claro! Após a entrega ofereço suporte inicial e também pacotes opcionais de manutenção."
+      answer: "Sim! Após a entrega ofereço suporte inicial e também pacotes opcionais de manutenção contínua."
     },
     {
       question: "Como funciona o processo?",
-      answer: "Entendo o projeto, crio estrutura, passo pelos layouts, desenvolvo, faço testes, apresento e ajusto até ficar perfeito."
+      answer: "Primeiro entendo a sua necessidade, depois crio a estrutura, desenho o layout, desenvolvo, faço testes e ajusto até ficar exatamente como você imaginou."
     },
     {
       question: "Quais tipos de projetos você aceita?",
-      answer: "Portfólios, sites de negócios, e-commerces simples, sistemas de gestão, automações e páginas customizadas."
+      answer: "Portfólios, sites de negócios, landing pages, sistemas simples e páginas customizadas."
     }
   ];
+
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -172,17 +174,18 @@ export default function Portfolio() {
 
       {/* WHATSAPP */}
       <a
-        href="https://wa.me/5584999999999"
+        href="https://wa.me/5584986399847?text=Ol%C3%A1%20Renata!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20falar%20sobre%20um%20projeto."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 group animate-bounce"
         style={{ animationDuration: '3s' }}
       >
-        <MessageCircle size={28} className="group-hover:rotate-12 transition-transform" />
+<MessageCircleMore size={28} className="group-hover:rotate-12 transition-transform" />
         <span className="absolute -top-10 right-0 bg-gray-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
           Fale comigo!
         </span>
       </a>
+
 
       {/* HERO */}
       <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 px-4 text-center relative">
@@ -206,22 +209,56 @@ export default function Portfolio() {
             Meu foco é criar experiências fluidas, visualmente profissionais e alinhadas com a necessidade de cada negócio.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <button onClick={() => scrollToSection('projetos')} className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all">Ver Projetos</button>
-            <a href="/curriculo.pdf" download className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2">
-              <Download size={20} /> Baixar Currículo
-            </a>
-          </div>
+         <div 
+  className="flex flex-wrap gap-4 justify-center animate-fade-in" 
+  style={{ animationDelay: '0.6s' }}
+>
+
+  {/* Botão — Enviar Email */}
+  <a
+    href="mailto:renata.desenvolvedora@gmail.com?subject=Quero%20fazer%20um%20projeto%20com%20você&body=Olá%2C%20Renata!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20site%20ou%20projeto.%20Podemos%20falar%3F"
+    className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all flex items-center gap-2"
+  >
+    <Mail size={20} /> Email
+  </a>
+
+  {/* Botão — WhatsApp com mensagem personalizada */}
+  <a
+    href="https://wa.me/5584986399847?text=Olá%2C%20Renata!%20Vim%20pelo%20seu%20portfólio%20e%20quero%20falar%20sobre%20um%20site%20ou%20projeto.%20Pode%20me%20atender%3F"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-green-900/50 transition-all flex items-center gap-2"
+  >
+    <MessageCircleMore size={20} /> WhatsApp
+  </a>
+
+  {/* Botões que já existiam */}
+  <button 
+    onClick={() => scrollToSection('projetos')} 
+    className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all"
+  >
+    Ver Projetos
+  </button>
+
+  <a 
+    href="/curriculo.pdf" 
+    download 
+    className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2"
+  >
+    <Download size={20} /> Baixar Currículo
+  </a>
+</div>
+
 
           <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <a href="https://github.com/RenataARocha" target="_blank" className="hover:text-orange-500 hover:scale-110 transition-all"><Github size={24} /></a>
             <a href="https://www.linkedin.com/in/renata-alexandre-rocha/" target="_blank" className="hover:text-orange-500 hover:scale-110 transition-all"><Linkedin size={24} /></a>
-            <a 
-  href="mailto:contato@renata.com?subject=Solicitar%20orçamento&body=Olá%20Renata,%0A%0AEncontrei%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.%0A%0A%20Poderia%20me%20informar%20sobre%20valores,%20prazo%20e%20como%20funciona%20o%20processo?%0A%0AObrigado(a)!" 
-  className="hover:text-orange-500 hover:scale-110 transition-all"
->
-  <Mail size={24} />
-</a>
+            <a
+              href="mailto:contato@renata.com?subject=Solicitar%20orçamento&body=Olá%20Renata,%0A%0AEncontrei%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.%0A%0A%20Poderia%20me%20informar%20sobre%20valores,%20prazo%20e%20como%20funciona%20o%20processo?%0A%0AObrigado(a)!"
+              className="hover:text-orange-500 hover:scale-110 transition-all"
+            >
+              <Mail size={24} />
+            </a>
 
           </div>
 
@@ -419,13 +456,22 @@ export default function Portfolio() {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="https://wa.me/5584999999999" target="_blank" className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-green-900/50 transition-all flex items-center gap-2">
-                <MessageCircle size={20} /> WhatsApp
-              </a>
+              <a
+  href="https://wa.me/5584986399847?text=Ol%C3%A1%20Renata!%20Quero%20mais%20detalhes%20sobre%20seus%20servi%C3%A7os."
+  target="_blank"
+  className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-green-900/50 transition-all flex items-center gap-2"
+>
+  <MessageCircleMore size={20} /> WhatsApp
+</a>
 
-              <a href="mailto:contato@renata.com" className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all flex items-center gap-2">
+
+              <a
+                href="mailto:contato@renata.com?subject=Contato%20pelo%20Portf%C3%B3lio&body=Ol%C3%A1%20Renata!%20Gostaria%20de%20falar%20sobre%20um%20projeto."
+                className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all flex items-center gap-2"
+              >
                 <Mail size={20} /> Email
               </a>
+
             </div>
 
           </div>
