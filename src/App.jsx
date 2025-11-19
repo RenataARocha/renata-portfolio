@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Menu, X, Download, MessageCircle, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart, MessageCircleMore } from 'lucide-react';
+import { useState } from "react";
+import { Menu, X, Download, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart, MessageCircleMore } from 'lucide-react';
 
 
 export default function Portfolio() {
@@ -15,72 +15,73 @@ export default function Portfolio() {
     setMenuOpen(false);
   };
 
-  const featuredProjects = [
-    {
-      title: "Organizadora do Lar",
-      description: "Aplicação completa, estilo SPA, com lógica de tarefas, metas, categorias, alarmes e agenda diária.",
-      image: "/assets/organizador.png",
-      tech: ["HTML", "CSS", "JavaScript", "SPA"]
-    },
-    {
-      title: "Vortex Sneakers",
-      description: "Réplica moderna e responsiva inspirada no site da Nike. Layout forte e visual profissional.",
-      image: "/assets/vortex.png",
-      tech: ["HTML", "CSS", "Responsividade"]
-    },
-    {
-      title: "Conversor de Moedas",
-      description: "Conversor dinâmico utilizando API externa, interface organizada e responsiva.",
-      image: "/assets/conversor.png",
-      tech: ["HTML", "CSS", "JavaScript", "API"]
-    },
-    {
-      title: "Wide Coverage Location",
-      description: "Site institucional completo, com foco em comunicação clara e visual profissional.",
-      image: "/assets/location.png",
-      tech: ["HTML", "CSS", "Responsividade"]
-    },
-    {
-      title: "Litera - Biblioteca Online",
-      description: "Interface desenvolvida do zero para consulta e organização de livros.",
-      image: "/assets/litera.png",
-      tech: ["React", "Frontend"]
-    },
-    {
-      title: "Easy Shopping Mobile",
-      description: "Interface mobile elegante, projetada para compras rápidas e funcionais.",
-      image: "/assets/easy.png",
-      tech: ["HTML", "CSS", "Mobile"]
-    }
-  ]
+ const featuredProjects = [
+  {
+    title: "Organizadora do Lar",
+    description: "SPA completa com sistema de tarefas, categorias, metas, alarmes e agenda diária. Focada em produtividade real.",
+    image: "/assets/projetos/organizador.png",
+    tech: ["HTML", "CSS", "JavaScript", "SPA"]
+  },
+  {
+    title: "Vortex Sneakers",
+    description: "Réplica moderna e totalmente responsiva inspirada no site da Nike. Visual forte e estrutura profissional.",
+    image: "/assets/projetos/vortex.png",
+    tech: ["HTML", "CSS", "Responsividade", "JavaScript"]
+  },
+  {
+    title: "Conversor de Moedas",
+    description: "Conversor dinâmico consumindo API externa, com interface organizada e experiência fluida.",
+    image: "/assets/projetos/conversor.png",
+    tech: ["HTML", "CSS", "JavaScript", "API"]
+  },
+  {
+    title: "Wide Coverage Location",
+    description: "Site institucional desenvolvido com foco em clareza, hierarquia visual e comunicação eficiente.",
+    image: "/assets/projetos/location.png",
+    tech: ["HTML", "CSS", "Responsividade"]
+  },
+  {
+    title: "Litera - Biblioteca Online",
+    description: "Interface criada do zero para consulta, busca e organização de livros de forma fácil e intuitiva.",
+    image: "/assets/projetos/litera.png",
+    tech: ["React", "Frontend", "TypeScript"]
+  },
+  {
+    title: "Easy Shopping Mobile",
+    description: "Interface mobile elegante para facilitar compras rápidas com navegação simples e intuitiva.",
+    image: "/assets/projetos/easy.png",
+    tech: ["HTML", "CSS", "Mobile"]
+  }
+];
+
 
 
   const otherProjects = [
-    {
-      title: "InspiraGram",
-      description: "Projeto visual inspirado no Instagram.",
-      image: "/assets/inspira.png",
-      tech: ["HTML", "CSS"]
-    },
-    {
-      title: "Gerador de Currículo",
-      description: "Ferramenta prática para gerar currículos automáticos.",
-      image: "/assets/curriculo.png",
-      tech: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      title: "Bros Plumbing",
-      description: "Landing page profissional para empresa de encanamento.",
-      image: "/assets/plumbing.png",
-      tech: ["HTML", "CSS"]
-    },
-    {
-      title: "Blog Pessoal",
-      description: "Blog responsivo desenvolvido do zero.",
-      image: "/assets/blog.png",
-      tech: ["React", "Frontend"]
-    }
-  ]
+  {
+    title: "InspiraGram",
+    description: "Projeto visual inspirado no Instagram, focado em layout moderno e estética limpa.",
+    image: "/assets/projetos/inspira.png",
+    tech: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "Gerador de Currículo",
+    description: "Ferramenta prática para criar currículos automáticos com poucos cliques.",
+    image: "/assets/projetos/curriculo.png",
+    tech: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "Bros Plumbing",
+    description: "Landing page profissional para empresa de encanamento, com foco em conversão.",
+    image: "/assets/projetos/plumbing.png",
+    tech: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "Blog Pessoal",
+    description: "Blog responsivo desenvolvido do zero, pensado para leitura fluida e organização clara.",
+    image: "/assets/projetos/blog.png",
+    tech: ["React", "Frontend", "TypeScript"]
+  }
+];
 
 
   const skills = [
@@ -90,6 +91,7 @@ export default function Portfolio() {
     { name: "React", level: 78 },
     { name: "Git & GitHub", level: 88 },
     { name: "Tailwind CSS", level: 80 },
+    { name: "TypeScript", level: 60 },
   ];
 
   const faqs = [
