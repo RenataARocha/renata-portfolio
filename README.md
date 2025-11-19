@@ -1,4 +1,5 @@
-# 🌟 Portfólio — Renata Rocha  
+# 🌟 Portfólio — Renata Rocha
+
 Desenvolvedora Front-end | HTML • CSS • JavaScript • React
 
 Este é o meu portfólio oficial, criado para apresentar meus projetos, habilidades, trajetória e a evolução da minha jornada como desenvolvedora Front-end.  
@@ -13,11 +14,11 @@ Meu foco é transformar ideias em interfaces modernas, responsivas e funcionais.
 
 Este portfólio foi desenvolvido com foco em:
 
-- Design moderno e limpo  
-- Performance e responsividade  
-- Boa experiência de usuário  
-- Organização clara dos projetos  
-- SEO otimizado para indexação no Google  
+- Design moderno e limpo
+- Performance e responsividade
+- Boa experiência de usuário
+- Organização clara dos projetos
+- SEO otimizado para indexação no Google
 - Acessibilidade (Semântica, alt-text, hierarquia correta)
 
 Além disso, possui integração com WhatsApp, animações, efeitos suaves e estrutura modular organizada.
@@ -42,26 +43,30 @@ Além disso, possui integração com WhatsApp, animações, efeitos suaves e est
 O site é composto por:
 
 ### 💼 Seção de Projetos
+
 Projetos reais, organizados em:
 
-- **Destaques** — projetos completos e robustos.  
+- **Destaques** — projetos completos e robustos.
 - **Outros Projetos** — projetos menores, mas igualmente bem construídos.
 
-### 🧩 Tecnologias por Projeto  
+### 🧩 Tecnologias por Projeto
+
 Cada card exibe exatamente as stacks usadas:  
 HTML, CSS, JS, React, API, SPA, Responsividade…
 
 ### 📞 Contato Fácil
-- Botão de e-mail  
-- Botão de WhatsApp com mensagem personalizada  
-- Ícone flutuante animado no canto da tela  
+
+- Botão de e-mail
+- Botão de WhatsApp com mensagem personalizada
+- Ícone flutuante animado no canto da tela
 
 ### 🔍 SEO & Acessibilidade
-- Meta tags  
-- Robots.txt  
-- Sitemap.xml  
-- OG Image  
-- Favicon personalizado  
+
+- Meta tags
+- Robots.txt
+- Sitemap.xml
+- OG Image
+- Favicon personalizado
 
 ---
 
@@ -116,10 +121,10 @@ npm run dev
 
 O deploy foi feito usando **Vercel**, garantindo:
 
-- Certificado HTTPS automático  
-- Build otimizada  
-- Carregamento rápido  
-- Zero configuração de servidor  
+- Certificado HTTPS automático
+- Build otimizada
+- Carregamento rápido
+- Zero configuração de servidor
 
 ---
 
@@ -130,7 +135,7 @@ Se quiser conversar sobre projetos, parcerias ou oportunidades:
 📩 **E-mail:** programadorawebrenatarocha@gmail.com  
 💬 **WhatsApp:** https://wa.me/5584986399847  
 🌐 **Portfólio:** https://renata-portfolio.vercel.app/  
-💼 **LinkedIn:** https://www.linkedin.com/in/renata-alexandre-rocha/ 
+💼 **LinkedIn:** https://www.linkedin.com/in/renata-alexandre-rocha/
 
 ---
 

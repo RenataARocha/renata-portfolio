@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart, MessageCircleMore } from 'lucide-react';
+import { Menu, X, Download, ChevronDown, Mail, Github, Linkedin, Code, Sparkles, Heart, MessageCircleMore, ArrowUp } from 'lucide-react';
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [faqOpen, setFaqOpen] = useState({});
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const toggleFaq = (index) => {
     setFaqOpen(prev => ({ ...prev, [index]: !prev[index] }));
@@ -13,6 +14,19 @@ export default function Portfolio() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Mostrar/ocultar botão de voltar ao topo
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Prevenir scroll quando menu mobile estiver aberto
   useEffect(() => {
@@ -219,6 +233,20 @@ export default function Portfolio() {
         </span>
       </a>
 
+      {/* BOTÃO VOLTAR AO TOPO */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-24 right-6 bg-gradient-to-r from-orange-600 to-red-600 p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 group animate-fade-in focus:outline-none focus:ring-4 focus:ring-orange-500"
+          aria-label="Voltar ao topo"
+        >
+          <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
+          <span className="absolute -top-10 right-0 bg-gray-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            Voltar ao topo
+          </span>
+        </button>
+      )}
+
       {/* HERO */}
       <main id="main-content">
         <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 px-4 text-center relative" aria-labelledby="hero-heading">
@@ -267,14 +295,15 @@ export default function Portfolio() {
                 Ver Projetos
               </button>
 
-              <a 
-                href="/curriculo.pdf" 
-                download 
-                className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
-                aria-label="Baixar currículo em PDF"
-              >
-                <Download size={20} aria-hidden="true" /> Baixar Currículo
-              </a>
+             <a
+  href="/Renata Alexandre Rocha - Desenvolvedora Front End.pdf"
+  download
+  className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
+  aria-label="Baixar currículo em PDF"
+>
+  <Download size={20} aria-hidden="true" /> Baixar Currículo
+</a>
+
             </div>
 
             <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.8s' }} role="list" aria-label="Redes sociais">
