@@ -1,16 +1,141 @@
-# React + Vite
+# 🌟 Portfólio — Renata Rocha  
+Desenvolvedora Front-end | HTML • CSS • JavaScript • React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o meu portfólio oficial, criado para apresentar meus projetos, habilidades, trajetória e a evolução da minha jornada como desenvolvedora Front-end.  
+Meu foco é transformar ideias em interfaces modernas, responsivas e funcionais.
 
-Currently, two official plugins are available:
+🔗 **Acesse o portfólio:**  
+👉 https://renata-portfolio.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este portfólio foi desenvolvido com foco em:
 
-## Expanding the ESLint configuration
+- Design moderno e limpo  
+- Performance e responsividade  
+- Boa experiência de usuário  
+- Organização clara dos projetos  
+- SEO otimizado para indexação no Google  
+- Acessibilidade (Semântica, alt-text, hierarquia correta)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Além disso, possui integração com WhatsApp, animações, efeitos suaves e estrutura modular organizada.
+
+---
+
+## 🧠 Tecnologias utilizadas
+
+- **React**
+- **JavaScript (ES6+)**
+- **Vite**
+- **Tailwind CSS**
+- **Lucide Icons**
+- **HTML Semântico**
+- **SEO & Acessibilidade**
+- **Vercel (Deploy)**
+
+---
+
+## 🖼️ Estrutura do Portfólio
+
+O site é composto por:
+
+### 💼 Seção de Projetos
+Projetos reais, organizados em:
+
+- **Destaques** — projetos completos e robustos.  
+- **Outros Projetos** — projetos menores, mas igualmente bem construídos.
+
+### 🧩 Tecnologias por Projeto  
+Cada card exibe exatamente as stacks usadas:  
+HTML, CSS, JS, React, API, SPA, Responsividade…
+
+### 📞 Contato Fácil
+- Botão de e-mail  
+- Botão de WhatsApp com mensagem personalizada  
+- Ícone flutuante animado no canto da tela  
+
+### 🔍 SEO & Acessibilidade
+- Meta tags  
+- Robots.txt  
+- Sitemap.xml  
+- OG Image  
+- Favicon personalizado  
+
+---
+
+## 📂 Estrutura de Pastas
+
+```plaintext
+public/
+├── assets/
+│   └── projetos/
+│       ├── organizador.png
+│       ├── vortex.png
+│       ├── conversor.png
+│       ├── location.png
+│       ├── litera.png
+│       └── easy.png
+├── favicon.png
+├── og-image.png
+├── robots.txt
+└── sitemap.xml
+
+src/
+├── App.jsx
+├── main.jsx
+└── components/
+```
+
+---
+
+## 🛠️ Instalação e uso
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/RenataARocha/renata-portfolio.git
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto localmente:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🚀 Deploy
+
+O deploy foi feito usando **Vercel**, garantindo:
+
+- Certificado HTTPS automático  
+- Build otimizada  
+- Carregamento rápido  
+- Zero configuração de servidor  
+
+---
+
+## 📧 Contato
+
+Se quiser conversar sobre projetos, parcerias ou oportunidades:
+
+📩 **E-mail:** programadorawebrenatarocha@gmail.com  
+💬 **WhatsApp:** https://wa.me/5584986399847  
+🌐 **Portfólio:** https://renata-portfolio.vercel.app/  
+💼 **LinkedIn:** https://www.linkedin.com/in/renata-alexandre-rocha/ 
+
+---
+
+## ❤️ Agradecimento
+
+Esse portfólio marca um momento importante da minha transição de carreira.  
+Cada detalhe foi pensado com carinho, dedicação e propósito.  
+E eu continuo evoluindo — um projeto de cada vez. 🚀✨
