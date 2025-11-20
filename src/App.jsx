@@ -51,71 +51,95 @@ export default function Portfolio() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [menuOpen]);
 
-  const featuredProjects = [
+ const featuredProjects = [
     {
       title: "Organizadora do Lar",
       description: "SPA completa com sistema de tarefas, categorias, metas, alarmes e agenda diária. Focada em produtividade real.",
       image: "/assets/projetos/organizador.png",
-      tech: ["HTML", "CSS", "JavaScript", "SPA"]
+      tech: ["HTML", "CSS", "JavaScript", "SPA"],
+      link: "https://renataarocha.github.io/Organizadora-Do-Lar/pages/tela-inicial.html"
     },
     {
       title: "Vortex Sneakers",
       description: "Réplica moderna e totalmente responsiva inspirada no site da Nike. Visual forte e estrutura profissional.",
       image: "/assets/projetos/vortex.png",
-      tech: ["HTML", "CSS", "Responsividade", "JavaScript"]
+      tech: ["HTML", "CSS", "Responsividade", "JavaScript"],
+      link: "https://renataarocha.github.io/Vortex-Sneakers/"
     },
     {
       title: "Conversor de Moedas",
       description: "Conversor dinâmico consumindo API externa, com interface organizada e experiência fluida.",
       image: "/assets/projetos/conversor.png",
-      tech: ["HTML", "CSS", "JavaScript", "API"]
+      tech: ["HTML", "CSS", "JavaScript", "API"],
+      link: "https://renataarocha.github.io/CurrencyConverter/"
     },
     {
       title: "Wide Coverage Location",
       description: "Site institucional desenvolvido com foco em clareza, hierarquia visual e comunicação eficiente.",
       image: "/assets/projetos/location.png",
-      tech: ["HTML", "CSS", "Responsividade"]
+      tech: ["HTML", "CSS", "Responsividade"],
+      link: "https://renataarocha.github.io/Wide-Coverage-Location/"
     },
     {
       title: "Litera - Biblioteca Online",
       description: "Interface criada do zero para consulta, busca e organização de livros de forma fácil e intuitiva.",
       image: "/assets/projetos/litera.png",
-      tech: ["React", "Frontend", "TypeScript"]
+      tech: ["React", "Frontend", "TypeScript"],
+      link: "https://litera-biblioteca-online.vercel.app/"
     },
     {
       title: "Easy Shopping Mobile",
       description: "Interface mobile elegante para facilitar compras rápidas com navegação simples e intuitiva.",
       image: "/assets/projetos/easy.png",
-      tech: ["HTML", "CSS", "Mobile"]
+      tech: ["HTML", "CSS", "Mobile"],
+      link: "https://renataarocha.github.io/Easy-Shopping-Via-Mobile/"
     }
   ];
 
   const otherProjects = [
-    {
-      title: "InspiraGram",
-      description: "Projeto visual inspirado no Instagram, focado em layout moderno e estética limpa.",
-      image: "/assets/projetos/inspira.png",
-      tech: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      title: "Gerador de Currículo",
-      description: "Ferramenta prática para criar currículos automáticos com poucos cliques.",
-      image: "/assets/projetos/curriculo.png",
-      tech: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      title: "Bros Plumbing",
-      description: "Landing page profissional para empresa de encanamento, com foco em conversão.",
-      image: "/assets/projetos/plumbing.png",
-      tech: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      title: "Blog Pessoal",
-      description: "Blog responsivo desenvolvido do zero, pensado para leitura fluida e organização clara.",
-      image: "/assets/projetos/blog.png",
-      tech: ["React", "Frontend", "TypeScript"]
-    }
-  ];
+  {
+    title: "InspiraGram",
+    description: "Projeto visual inspirado no Instagram, focado em layout moderno e estética limpa.",
+    image: "/assets/projetos/inspira.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://renataarocha.github.io/InspiraGram/"
+  },
+  {
+    title: "Gerador de Currículo",
+    description: "Ferramenta prática para criar currículos automáticos com poucos cliques.",
+    image: "/assets/projetos/curriculo.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://projeto-8-gerador-curriculo.vercel.app/"
+  },
+  {
+    title: "Bros Plumbing",
+    description: "Landing page profissional para empresa de encanamento, com foco em conversão.",
+    image: "/assets/projetos/plumbing.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://renataarocha.github.io/bros-plumbing-solutions/"
+  },
+  {
+    title: "Blog Pessoal",
+    description: "Blog responsivo desenvolvido do zero, pensado para leitura fluida e organização clara.",
+    image: "/assets/projetos/blog.png",
+    tech: ["React", "Frontend", "TypeScript"],
+    link: "https://blog-pessoal-taupe.vercel.app/"
+  },
+  {
+    title: "Assistente de Estudos com IA",
+    description: "Aplicação inteligente que auxilia nos estudos usando inteligência artificial para personalizar o aprendizado.",
+    image: "/assets/projetos/assistente.png",
+    tech: ["React", "IA", "TypeScript"],
+    link: "https://koru-projeto-6.vercel.app/"
+  },
+  {
+    title: "CodeLuck",
+    description: "Projeto criativo e interativo com foco em experiência do usuário e design moderno.",
+    image: "/assets/projetos/codeluck.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://renataarocha.github.io/CodeLuck/"
+  }
+];
 
   const skills = [
     { name: "HTML", level: 95 },
@@ -373,74 +397,90 @@ export default function Portfolio() {
         </section>
 
         {/* PROJETOS EM DESTAQUE */}
-        <section id="projetos" className="py-20 px-4 relative" aria-labelledby="projetos-heading">
-          <div className="max-w-6xl mx-auto relative z-10">
-            <h2 id="projetos-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-              Projetos em Destaque
-            </h2>
+<section id="projetos" className="py-20 px-4 relative" aria-labelledby="projetos-heading">
+  <div className="max-w-6xl mx-auto relative z-10">
+    <h2 id="projetos-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+      Projetos em Destaque
+    </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de projetos em destaque">
-              {featuredProjects.map((project, index) => (
-                <article key={index} className="group bg-gray-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-orange-900/30 hover:border-orange-700/60 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-900/30" role="listitem">
-                  <div className="h-48 overflow-hidden relative">
-                    <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
-                  </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de projetos em destaque">
+      {featuredProjects.map((project, index) => (
+        <a 
+          key={index}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block group bg-gray-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-orange-900/30 hover:border-orange-700/60 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-900/30 cursor-pointer focus:outline-none focus:ring-4 focus:ring-orange-500"
+          role="listitem"
+          aria-label={`Abrir projeto ${project.title} em nova aba`}
+        >
+          <div className="h-48 overflow-hidden relative">
+            <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+          </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 text-orange-500 group-hover:text-red-500 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4">{project.description}</p>
+          <div className="p-6">
+            <h3 className="text-xl font-bold mb-3 text-orange-500 group-hover:text-red-500 transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-gray-400 mb-4">{project.description}</p>
 
-                    <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
-                      {project.tech.map((tech, i) => (
-                        <span key={i} className="px-3 py-1 bg-orange-900/30 rounded-full text-sm text-orange-400 border border-orange-800/40 hover:bg-orange-800/40 transition-colors" role="listitem">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </article>
+            <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
+              {project.tech.map((tech, i) => (
+                <span key={i} className="px-3 py-1 bg-orange-900/30 rounded-full text-sm text-orange-400 border border-orange-800/40 hover:bg-orange-800/40 transition-colors" role="listitem">
+                  {tech}
+                </span>
               ))}
             </div>
           </div>
-        </section>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* OUTROS PROJETOS */}
-        <section className="py-16 px-4 relative" aria-labelledby="outros-projetos-heading">
-          <div className="max-w-6xl mx-auto relative z-10">
-            <h2 id="outros-projetos-heading" className="text-3xl font-bold mb-10 text-center text-orange-400">
-              Outros Projetos
-            </h2>
+<section className="py-16 px-4 relative" aria-labelledby="outros-projetos-heading">
+  <div className="max-w-6xl mx-auto relative z-10">
+    <h2 id="outros-projetos-heading" className="text-3xl font-bold mb-10 text-center text-orange-400">
+      Outros Projetos
+    </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de outros projetos">
-              {otherProjects.map((project, index) => (
-                <article key={index} className="group bg-gray-800/40 backdrop-blur-lg rounded-2xl overflow-hidden border border-gray-700/40 hover:border-orange-700/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-orange-800/20" role="listitem">
-                  <div className="h-44 overflow-hidden relative">
-                    <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
-                  </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de outros projetos">
+      {otherProjects.map((project, index) => (
+        <a
+          key={index}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block group bg-gray-800/40 backdrop-blur-lg rounded-2xl overflow-hidden border border-gray-700/40 hover:border-orange-700/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-orange-800/20 cursor-pointer focus:outline-none focus:ring-4 focus:ring-orange-500"
+          role="listitem"
+          aria-label={`Abrir projeto ${project.title} em nova aba`}
+        >
+          <div className="h-44 overflow-hidden relative">
+            <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+          </div>
 
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold mb-3 text-orange-300 group-hover:text-red-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+          <div className="p-5">
+            <h3 className="text-lg font-semibold mb-3 text-orange-300 group-hover:text-red-400 transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-gray-400 text-sm mb-3">{project.description}</p>
 
-                    <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
-                      {project.tech.map((tech, i) => (
-                        <span key={i} className="px-2 py-1 bg-orange-900/20 rounded-full text-xs text-orange-300 border border-orange-800/30 hover:bg-orange-800/30 transition-colors" role="listitem">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </article>
+            <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
+              {project.tech.map((tech, i) => (
+                <span key={i} className="px-2 py-1 bg-orange-900/20 rounded-full text-xs text-orange-300 border border-orange-800/30 hover:bg-orange-800/30 transition-colors" role="listitem">
+                  {tech}
+                </span>
               ))}
             </div>
           </div>
-        </section>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* HABILIDADES */}
         <section id="habilidades" className="py-20 px-4 relative" aria-labelledby="habilidades-heading">
