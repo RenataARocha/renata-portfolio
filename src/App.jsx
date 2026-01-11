@@ -19,7 +19,6 @@ export default function Portfolio() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Mostrar/ocultar botão de voltar ao topo
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
@@ -28,7 +27,6 @@ export default function Portfolio() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevenir scroll quando menu mobile estiver aberto
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -40,7 +38,6 @@ export default function Portfolio() {
     };
   }, [menuOpen]);
 
-  // Fechar menu com ESC
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && menuOpen) {
@@ -51,95 +48,123 @@ export default function Portfolio() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [menuOpen]);
 
- const featuredProjects = [
+  const featuredProjects = [
+    {
+      title: "Salão Henrique Bilro",
+      description: "Site institucional completo para salão de beleza, com design moderno e foco em conversão de clientes.",
+      image: "/assets/projetos/salon-henrique.png",
+      tech: ["HTML", "CSS", "JavaScript", "Responsivo"],
+      link: "https://salon-henrique-bilro.vercel.app/",
+      github: "https://github.com/RenataARocha/salon-henrique-bilro"
+    },
+    {
+      title: "Ateliê da Laura",
+      description: "Landing page elegante para ateliê de costura, com galeria de trabalhos e informações de contato.",
+      image: "/assets/projetos/atelie-laura.png",
+      tech: ["HTML", "CSS", "JavaScript", "Design Responsivo"],
+      link: "https://atelie-da-laura.vercel.app/",
+      github: "https://github.com/RenataARocha/atelie-da-laura"
+    },
+    {
+      title: "Clínica de Estética",
+      description: "Site profissional para clínica de estética com apresentação de serviços e informações institucionais.",
+      image: "/assets/projetos/clinica-estetica.png",
+      tech: ["HTML", "CSS", "JavaScript", "Layout Moderno"],
+      link: "https://renataarocha.github.io/Cl-nica-de-Estetica/",
+      github: "https://github.com/RenataARocha/Cl-nica-de-Estetica"
+    },
     {
       title: "Organizadora do Lar",
       description: "SPA completa com sistema de tarefas, categorias, metas, alarmes e agenda diária. Focada em produtividade real.",
       image: "/assets/projetos/organizador.png",
       tech: ["HTML", "CSS", "JavaScript", "SPA"],
-      link: "https://renataarocha.github.io/Organizadora-Do-Lar/pages/tela-inicial.html"
+      link: "https://renataarocha.github.io/Organizadora-Do-Lar/pages/tela-inicial.html",
+      github: "https://github.com/RenataARocha/Organizadora-Do-Lar"
     },
     {
       title: "Vortex Sneakers",
       description: "Réplica moderna e totalmente responsiva inspirada no site da Nike. Visual forte e estrutura profissional.",
       image: "/assets/projetos/vortex.png",
       tech: ["HTML", "CSS", "Responsividade", "JavaScript"],
-      link: "https://renataarocha.github.io/Vortex-Sneakers/"
+      link: "https://renataarocha.github.io/Vortex-Sneakers/",
+      github: "https://github.com/RenataARocha/Vortex-Sneakers"
     },
     {
       title: "Conversor de Moedas",
       description: "Conversor dinâmico consumindo API externa, com interface organizada e experiência fluida.",
       image: "/assets/projetos/conversor.png",
       tech: ["HTML", "CSS", "JavaScript", "API"],
-      link: "https://renataarocha.github.io/CurrencyConverter/"
-    },
+      link: "https://renataarocha.github.io/CurrencyConverter/",
+      github: "https://github.com/RenataARocha/CurrencyConverter"
+    }
+  ];
+
+  const otherProjects = [
     {
       title: "Wide Coverage Location",
       description: "Site institucional desenvolvido com foco em clareza, hierarquia visual e comunicação eficiente.",
       image: "/assets/projetos/location.png",
       tech: ["HTML", "CSS", "Responsividade"],
-      link: "https://renataarocha.github.io/Wide-Coverage-Location/"
+      link: "https://renataarocha.github.io/Wide-Coverage-Location/",
+      github: "https://github.com/RenataARocha/Wide-Coverage-Location"
     },
     {
       title: "Litera - Biblioteca Online",
       description: "Interface criada do zero para consulta, busca e organização de livros de forma fácil e intuitiva.",
       image: "/assets/projetos/litera.png",
       tech: ["React", "Frontend", "TypeScript"],
-      link: "https://litera-biblioteca-online.vercel.app/"
+      link: "https://litera-biblioteca-online.vercel.app/",
+      github: "https://github.com/RenataARocha/Litera"
     },
     {
       title: "Easy Shopping Mobile",
       description: "Interface mobile elegante para facilitar compras rápidas com navegação simples e intuitiva.",
       image: "/assets/projetos/easy.png",
       tech: ["HTML", "CSS", "Mobile"],
-      link: "https://renataarocha.github.io/Easy-Shopping-Via-Mobile/"
+      link: "https://renataarocha.github.io/Easy-Shopping-Via-Mobile/",
+      github: "https://github.com/RenataARocha/Easy-Shopping-Via-Mobile"
+    },
+    {
+      title: "Gerador de Currículo",
+      description: "Ferramenta prática para criar currículos automáticos com poucos cliques.",
+      image: "/assets/projetos/curriculo.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      link: "https://projeto-8-gerador-curriculo.vercel.app/",
+      github: "https://github.com/RenataARocha/projeto-8-gerador-curriculo"
+    },
+    {
+      title: "Bros Plumbing",
+      description: "Landing page profissional para empresa de encanamento, com foco em conversão.",
+      image: "/assets/projetos/plumbing.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      link: "https://renataarocha.github.io/bros-plumbing-solutions/",
+      github: "https://github.com/RenataARocha/bros-plumbing-solutions"
+    },
+    {
+      title: "Blog Pessoal",
+      description: "Blog responsivo desenvolvido do zero, pensado para leitura fluida e organização clara.",
+      image: "/assets/projetos/blog.png",
+      tech: ["React", "Frontend", "TypeScript"],
+      link: "https://blog-pessoal-taupe.vercel.app/",
+      github: "https://github.com/RenataARocha/blog-pessoal"
+    },
+    {
+      title: "Assistente de Estudos com IA",
+      description: "Aplicação inteligente que auxilia nos estudos usando inteligência artificial para personalizar o aprendizado.",
+      image: "/assets/projetos/assistente.png",
+      tech: ["React", "IA", "TypeScript"],
+      link: "https://koru-projeto-6.vercel.app/",
+      github: "https://github.com/RenataARocha/koru-projeto-6"
+    },
+    {
+      title: "CodeLuck",
+      description: "Projeto criativo e interativo com foco em experiência do usuário e design moderno.",
+      image: "/assets/projetos/codeluck.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      link: "https://renataarocha.github.io/CodeLuck/",
+      github: "https://github.com/RenataARocha/CodeLuck"
     }
   ];
-
-  const otherProjects = [
-  {
-    title: "InspiraGram",
-    description: "Projeto visual inspirado no Instagram, focado em layout moderno e estética limpa.",
-    image: "/assets/projetos/inspira.png",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://renataarocha.github.io/InspiraGram/"
-  },
-  {
-    title: "Gerador de Currículo",
-    description: "Ferramenta prática para criar currículos automáticos com poucos cliques.",
-    image: "/assets/projetos/curriculo.png",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://projeto-8-gerador-curriculo.vercel.app/"
-  },
-  {
-    title: "Bros Plumbing",
-    description: "Landing page profissional para empresa de encanamento, com foco em conversão.",
-    image: "/assets/projetos/plumbing.png",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://renataarocha.github.io/bros-plumbing-solutions/"
-  },
-  {
-    title: "Blog Pessoal",
-    description: "Blog responsivo desenvolvido do zero, pensado para leitura fluida e organização clara.",
-    image: "/assets/projetos/blog.png",
-    tech: ["React", "Frontend", "TypeScript"],
-    link: "https://blog-pessoal-taupe.vercel.app/"
-  },
-  {
-    title: "Assistente de Estudos com IA",
-    description: "Aplicação inteligente que auxilia nos estudos usando inteligência artificial para personalizar o aprendizado.",
-    image: "/assets/projetos/assistente.png",
-    tech: ["React", "IA", "TypeScript"],
-    link: "https://koru-projeto-6.vercel.app/"
-  },
-  {
-    title: "CodeLuck",
-    description: "Projeto criativo e interativo com foco em experiência do usuário e design moderno.",
-    image: "/assets/projetos/codeluck.png",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://renataarocha.github.io/CodeLuck/"
-  }
-];
 
   const skills = [
     { name: "HTML", level: 95 },
@@ -176,7 +201,6 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Link para pular navegação */}
       <a 
         href="#main-content" 
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-orange-600 focus:text-white focus:rounded"
@@ -184,7 +208,6 @@ export default function Portfolio() {
         Pular para o conteúdo principal
       </a>
 
-      {/* FUNDO COM ANIMAÇÕES */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute bottom-24 right-12 w-96 h-96 bg-red-500 rounded-full mix-blend-screen filter blur-3xl opacity-25 animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -194,7 +217,6 @@ export default function Portfolio() {
         <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-pink-500 rounded-full animate-ping opacity-50" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* NAV */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-lg z-50 border-b border-orange-900/30" role="navigation" aria-label="Navegação principal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -242,7 +264,6 @@ export default function Portfolio() {
         )}
       </nav>
 
-      {/* WHATSAPP */}
       <a
         href="https://wa.me/5584986399847?text=Ol%C3%A1%20Renata!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20falar%20sobre%20um%20projeto."
         target="_blank"
@@ -257,7 +278,6 @@ export default function Portfolio() {
         </span>
       </a>
 
-      {/* BOTÃO VOLTAR AO TOPO */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
@@ -271,14 +291,15 @@ export default function Portfolio() {
         </button>
       )}
 
-      {/* HERO */}
       <main id="main-content">
         <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 px-4 text-center relative" aria-labelledby="hero-heading">
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="mt-6 mb-6 animate-float" aria-hidden="true">
-              <div className="w-40 h-40 mx-auto bg-gradient-to-br from-orange-500 to-red-500 rounded-full p-1 shadow-2xl shadow-orange-900/50">
-                <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
-                  <Code size={56} className="text-orange-500" />
+              <div className="w-60 h-60 mx-auto bg-gradient-to-br from-orange-600 to-red-400 rounded-full p-1 shadow-2xl shadow-orange-900/50">
+                <div className="w-full h-full bg-black rounded-full flex items-center justify-center overflow-hidden">
+                 
+                  <img src="/assets/projetos/renatarocha.png" alt="Renata Rocha" className="w-full h-full object-cover" /> 
+                  
                 </div>
               </div>
             </div>
@@ -319,15 +340,14 @@ export default function Portfolio() {
                 Ver Projetos
               </button>
 
-             <a
-  href="/Renata Alexandre Rocha - Desenvolvedora Front End.pdf"
-  download
-  className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
-  aria-label="Baixar currículo em PDF"
->
-  <Download size={20} aria-hidden="true" /> Baixar Currículo
-</a>
-
+              <a
+                href="/Renata Alexandre Rocha - Desenvolvedora Front End.pdf"
+                download
+                className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
+                aria-label="Baixar currículo em PDF"
+              >
+                <Download size={20} aria-hidden="true" /> Baixar Currículo
+              </a>
             </div>
 
             <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.8s' }} role="list" aria-label="Redes sociais">
@@ -338,7 +358,7 @@ export default function Portfolio() {
                 <Linkedin size={24} aria-hidden="true" />
               </a>
               <a
-                href="mailto:contato@renata.com?subject=Solicitar%20orçamento&body=Olá%20Renata,%0A%0AEncontrei%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.%0A%0A%20Poderia%20me%20informar%20sobre%20valores,%20prazo%20e%20como%20funciona%20o%20processo?%0A%0AObrigado(a)!"
+                href="mailto:renata.desenvolvedora@gmail.com"
                 className="hover:text-orange-500 hover:scale-110 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 rounded p-1"
                 aria-label="Enviar email"
               >
@@ -348,7 +368,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* SOBRE */}
         <section id="sobre" className="py-20 px-4 relative" aria-labelledby="sobre-heading">
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 id="sobre-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Sobre Mim</h2>
@@ -378,7 +397,7 @@ export default function Portfolio() {
 
               <div className="grid md:grid-cols-3 gap-6 mt-8" role="list" aria-label="Estatísticas">
                 <div className="text-center p-6 bg-gradient-to-br from-orange-900/20 to-red-900/20 rounded-xl border border-orange-800/30 hover:scale-105 transition-transform" role="listitem">
-                  <div className="text-3xl font-bold text-orange-500 mb-2" aria-label="Mais de 10">+10</div>
+                  <div className="text-3xl font-bold text-orange-500 mb-2" aria-label="Mais de 14">+14</div>
                   <div className="text-gray-400">Projetos Próprios</div>
                 </div>
 
@@ -396,93 +415,124 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* PROJETOS EM DESTAQUE */}
-<section id="projetos" className="py-20 px-4 relative" aria-labelledby="projetos-heading">
-  <div className="max-w-6xl mx-auto relative z-10">
-    <h2 id="projetos-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-      Projetos em Destaque
-    </h2>
+        <section id="projetos" className="py-20 px-4 relative" aria-labelledby="projetos-heading">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <h2 id="projetos-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              Projetos em Destaque
+            </h2>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de projetos em destaque">
-      {featuredProjects.map((project, index) => (
-        <a 
-          key={index}
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block group bg-gray-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-orange-900/30 hover:border-orange-700/60 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-900/30 cursor-pointer focus:outline-none focus:ring-4 focus:ring-orange-500"
-          role="listitem"
-          aria-label={`Abrir projeto ${project.title} em nova aba`}
-        >
-          <div className="h-48 overflow-hidden relative">
-            <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
-          </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de projetos em destaque">
+              {featuredProjects.map((project, index) => (
+                <article 
+                  key={index}
+                  className="group bg-gray-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-orange-900/30 hover:border-orange-700/60 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-900/30"
+                  role="listitem"
+                >
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+                  </div>
 
-          <div className="p-6">
-            <h3 className="text-xl font-bold mb-3 text-orange-500 group-hover:text-red-500 transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 mb-4">{project.description}</p>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 text-orange-500 group-hover:text-red-500 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
-              {project.tech.map((tech, i) => (
-                <span key={i} className="px-3 py-1 bg-orange-900/30 rounded-full text-sm text-orange-400 border border-orange-800/40 hover:bg-orange-800/40 transition-colors" role="listitem">
-                  {tech}
-                </span>
+                    <div className="flex flex-wrap gap-2 mb-4" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-3 py-1 bg-orange-900/30 rounded-full text-sm text-orange-400 border border-orange-800/40 hover:bg-orange-800/40 transition-colors" role="listitem">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3">
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg font-semibold hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        aria-label={`Ver projeto ${project.title} ao vivo`}
+                      >
+                        Ver Projeto
+                      </a>
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        aria-label={`Ver código do projeto ${project.title} no GitHub`}
+                      >
+                        <Github size={20} aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-        {/* OUTROS PROJETOS */}
-<section className="py-16 px-4 relative" aria-labelledby="outros-projetos-heading">
-  <div className="max-w-6xl mx-auto relative z-10">
-    <h2 id="outros-projetos-heading" className="text-3xl font-bold mb-10 text-center text-orange-400">
-      Outros Projetos
-    </h2>
+        <section className="py-16 px-4 relative" aria-labelledby="outros-projetos-heading">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <h2 id="outros-projetos-heading" className="text-3xl font-bold mb-10 text-center text-orange-400">
+              Outros Projetos
+            </h2>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de outros projetos">
-      {otherProjects.map((project, index) => (
-        <a
-          key={index}
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block group bg-gray-800/40 backdrop-blur-lg rounded-2xl overflow-hidden border border-gray-700/40 hover:border-orange-700/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-orange-800/20 cursor-pointer focus:outline-none focus:ring-4 focus:ring-orange-500"
-          role="listitem"
-          aria-label={`Abrir projeto ${project.title} em nova aba`}
-        >
-          <div className="h-44 overflow-hidden relative">
-            <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
-          </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de outros projetos">
+              {otherProjects.map((project, index) => (
+                <article
+                  key={index}
+                  className="group bg-gray-800/40 backdrop-blur-lg rounded-2xl overflow-hidden border border-gray-700/40 hover:border-orange-700/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-orange-800/20"
+                  role="listitem"
+                >
+                  <div className="h-44 overflow-hidden relative">
+                    <img src={project.image} alt={`Captura de tela do projeto ${project.title}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+                  </div>
 
-          <div className="p-5">
-            <h3 className="text-lg font-semibold mb-3 text-orange-300 group-hover:text-red-400 transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold mb-3 text-orange-300 group-hover:text-red-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
-              {project.tech.map((tech, i) => (
-                <span key={i} className="px-2 py-1 bg-orange-900/20 rounded-full text-xs text-orange-300 border border-orange-800/30 hover:bg-orange-800/30 transition-colors" role="listitem">
-                  {tech}
-                </span>
+                    <div className="flex flex-wrap gap-2 mb-4" role="list" aria-label={`Tecnologias usadas em ${project.title}`}>
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-2 py-1 bg-orange-900/20 rounded-full text-xs text-orange-300 border border-orange-800/30 hover:bg-orange-800/30 transition-colors" role="listitem">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3">
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg font-semibold hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                        aria-label={`Ver projeto ${project.title} ao vivo`}
+                      >
+                        Ver Projeto
+                      </a>
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        aria-label={`Ver código do projeto ${project.title} no GitHub`}
+                      >
+                        <Github size={18} aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-        {/* HABILIDADES */}
         <section id="habilidades" className="py-20 px-4 relative" aria-labelledby="habilidades-heading">
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 id="habilidades-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Minhas Habilidades</h2>
@@ -506,7 +556,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section id="faq" className="py-20 px-4 relative" aria-labelledby="faq-heading">
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 id="faq-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Perguntas Frequentes</h2>
@@ -545,7 +594,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* CONTATO */}
         <section id="contato" className="py-20 px-4 relative" aria-labelledby="contato-heading">
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 id="contato-heading" className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Vamos Trabalhar Juntos?</h2>
@@ -568,7 +616,7 @@ export default function Portfolio() {
                 </a>
 
                 <a
-                  href="mailto:contato@renata.com?subject=Contato%20pelo%20Portf%C3%B3lio&body=Ol%C3%A1%20Renata!%20Gostaria%20de%20falar%20sobre%20um%20projeto."
+                  href="mailto:renata.desenvolvedora@gmail.com?subject=Contato%20pelo%20Portfólio&body=Ol%C3%A1%20Renata!%20Gostaria%20de%20falar%20sobre%20um%20projeto."
                   className="px-8 py-3 bg-gradient-to-r from-orange-600 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-900/50 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
                   aria-label="Enviar email"
                 >
@@ -580,7 +628,6 @@ export default function Portfolio() {
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer className="py-8 px-4 border-t border-orange-900/30 text-center relative" role="contentinfo">
         <div className="flex justify-center items-center gap-2 mb-4">
           <span className="text-gray-400">Feito com</span>
