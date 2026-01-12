@@ -53,7 +53,7 @@ export default function Portfolio() {
       title: "Salão Henrique Bilro",
       description: "Site institucional completo para salão de beleza, com design moderno e foco em conversão de clientes.",
       image: "/assets/projetos/salon-henrique.png",
-      tech: ["HTML", "CSS", "JavaScript", "Responsivo"],
+      tech: ["React", "Frontend", "TypeScript", "Design Responsivo"],
       link: "https://salon-henrique-bilro.vercel.app/",
       github: "https://github.com/RenataARocha/salon-henrique-bilro"
     },
@@ -61,7 +61,7 @@ export default function Portfolio() {
       title: "Ateliê da Laura",
       description: "Landing page elegante para ateliê de costura, com galeria de trabalhos e informações de contato.",
       image: "/assets/projetos/atelie-laura.png",
-      tech: ["HTML", "CSS", "JavaScript", "Design Responsivo"],
+      tech: ["React", "Frontend", "TypeScript", "Design Responsivo"],
       link: "https://atelie-da-laura.vercel.app/",
       github: "https://github.com/RenataARocha/atelie-da-laura"
     },
