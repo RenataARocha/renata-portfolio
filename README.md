@@ -1,9 +1,11 @@
 # 🌟 Portfólio — Renata Rocha
 
-Desenvolvedora Front-end | HTML • CSS • JavaScript • React
+Desenvolvedora Front-End Júnior | HTML • CSS • JavaScript • React
 
 Este é o meu portfólio oficial, criado para apresentar meus projetos, habilidades, trajetória e a evolução da minha jornada como desenvolvedora Front-end.  
 Meu foco é transformar ideias em interfaces modernas, responsivas e funcionais.
+
+Portfólio focado em projetos reais, acessíveis e orientados à experiência do usuário.
 
 🔗 **Acesse o portfólio:**  
 👉 https://renata-portfolio.vercel.app/
@@ -44,7 +46,7 @@ O site é composto por:
 
 ### 💼 Seção de Projetos
 
-Projetos reais, organizados em:
+Projetos reais e autorais, organizados em:
 
 - **Destaques** — projetos completos e robustos.
 - **Outros Projetos** — projetos menores, mas igualmente bem construídos.
@@ -141,6 +143,5 @@ Se quiser conversar sobre projetos, parcerias ou oportunidades:
 
 ## ❤️ Agradecimento
 
-Esse portfólio marca um momento importante da minha transição de carreira.  
-Cada detalhe foi pensado com carinho, dedicação e propósito.  
-E eu continuo evoluindo — um projeto de cada vez. 🚀✨
+Esse portfólio marca um momento importante da minha transição de carreira.
+Cada projeto representa aprendizado, evolução e compromisso com qualidade.
