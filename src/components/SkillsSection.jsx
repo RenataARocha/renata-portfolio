@@ -1,6 +1,40 @@
-import { skills } from "../data/portfolioData";
+import { useRef, useEffect, useState } from "react";
+import { skillGroups } from "../data/portfolioData";
+
+function useVisible(threshold = 0.15) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const timer = setTimeout(() => setVisible(true), 0);
+      return () => clearTimeout(timer);
+    }
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold, rootMargin: "0px 0px -60px 0px" },
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+
+  return [ref, visible];
+}
 
 export default function SkillsSection() {
+  const [sectionRef, sectionVisible] = useVisible();
+
   return (
     <section
       id="habilidades"
@@ -15,38 +49,33 @@ export default function SkillsSection() {
           Minhas Habilidades
         </h2>
 
-        <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl">
-          <div
-            className="space-y-6"
-            role="list"
-            aria-label="Lista de habilidades técnicas"
-          >
-            {skills.map((skill, index) => (
-              <div key={index} className="group" role="listitem">
-                <div className="flex justify-between mb-2">
-                  <span className="font-semibold text-gray-200 group-hover:text-orange-500 transition-colors">
-                    {skill.name}
-                  </span>
-                  <span
-                    className="text-orange-500"
-                    aria-label={`${skill.level} porcento`}
-                  >
-                    {skill.level}%
-                  </span>
-                </div>
-                <div
-                  className="h-3 bg-gray-800 rounded-full overflow-hidden"
-                  role="progressbar"
-                  aria-valuenow={skill.level}
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-label={`Nível de habilidade em ${skill.name}`}
+        <div
+          ref={sectionRef}
+          className={`bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl transition-all duration-700 ease-out ${
+            sectionVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="space-y-8">
+            {skillGroups.map((group) => (
+              <div key={group.category}>
+                <h3 className="text-sm font-semibold text-orange-500/70 uppercase tracking-widest mb-4">
+                  {group.category}
+                </h3>
+                <ul
+                  className="flex flex-wrap gap-2"
+                  role="list"
+                  aria-label={`Habilidades em ${group.category}`}
                 >
-                  <div
-                    className="h-full bg-gradient-to-r from-orange-600 to-red-600 rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-orange-900/50"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
+                  {group.skills.map((skill) => (
+                    <li key={skill} role="listitem">
+                      <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-orange-900/20 text-orange-300 border border-orange-800/30 hover:bg-orange-800/30 hover:border-orange-600/50 hover:text-orange-200 transition-all duration-300 cursor-default select-none">
+                        {skill}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

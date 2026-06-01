@@ -1,4 +1,40 @@
+import { useRef, useEffect, useState } from "react";
+
+function useVisible(threshold = 0.15) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const timer = setTimeout(() => setVisible(true), 0);
+      return () => clearTimeout(timer);
+    }
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold, rootMargin: "0px 0px -60px 0px" },
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+
+  return [ref, visible];
+}
+
 export default function AboutSection() {
+  const [cardRef, cardVisible] = useVisible();
+  const [statsRef, statsVisible] = useVisible(0.2);
+
   return (
     <section
       id="sobre"
@@ -13,7 +49,14 @@ export default function AboutSection() {
           Sobre Mim
         </h2>
 
-        <article className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl hover:border-orange-800/50 transition-all">
+        <article
+          ref={cardRef}
+          className={`bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl hover:border-orange-800/50 transition-all duration-700 ease-out ${
+            cardVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
             Sou Desenvolvedora Front-End em transição de carreira, com
             experiência anterior em Design Gráfico, o que fortaleceu minha visão
@@ -47,12 +90,17 @@ export default function AboutSection() {
           </p>
 
           <div
-            className="grid md:grid-cols-3 gap-6 mt-8"
+            ref={statsRef}
+            className={`grid md:grid-cols-3 gap-6 mt-8 transition-all duration-700 ease-out delay-200 ${
+              statsVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            }`}
             role="list"
             aria-label="Estatísticas"
           >
             <div
-              className="text-center p-6 bg-gradient-to-br from-orange-900/20 to-red-900/20 rounded-xl border border-orange-800/30 hover:scale-105 transition-transform"
+              className="text-center p-6 bg-gradient-to-br from-orange-900/20 to-red-900/20 rounded-xl border border-orange-800/30 hover:scale-105 transition-transform duration-300 ease-out"
               role="listitem"
             >
               <div
@@ -64,7 +112,7 @@ export default function AboutSection() {
               <div className="text-gray-400">Projetos Próprios</div>
             </div>
             <div
-              className="text-center p-6 bg-gradient-to-br from-red-900/20 to-pink-900/20 rounded-xl border border-red-800/30 hover:scale-105 transition-transform"
+              className="text-center p-6 bg-gradient-to-br from-red-900/20 to-pink-900/20 rounded-xl border border-red-800/30 hover:scale-105 transition-transform duration-300 ease-out"
               role="listitem"
             >
               <div
@@ -76,7 +124,7 @@ export default function AboutSection() {
               <div className="text-gray-400">Estudando Programação</div>
             </div>
             <div
-              className="text-center p-6 bg-gradient-to-br from-pink-900/20 to-orange-900/20 rounded-xl border border-pink-800/30 hover:scale-105 transition-transform"
+              className="text-center p-6 bg-gradient-to-br from-pink-900/20 to-orange-900/20 rounded-xl border border-pink-800/30 hover:scale-105 transition-transform duration-300 ease-out"
               role="listitem"
             >
               <div className="text-3xl font-bold text-pink-500 mb-2">100%</div>

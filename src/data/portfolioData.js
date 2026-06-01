@@ -1,5 +1,16 @@
 export const featuredProjects = [
     {
+        title: "MoneyMap",
+        description:
+            "Aplicação de controle financeiro com dashboard, gráficos, categorias, autenticação e gerenciamento de transações.",
+        image: "/assets/projetos/moneymap.png",
+        tech: ["React", "TypeScript", "Context API", "Charts", "Vite"],
+        link: "https://moneymap-delta.vercel.app/login",
+        github: "https://github.com/RenataARocha/moneymap",
+        featured: true,
+        new: true,
+    },
+    {
         title: "Sistema de Cadastro de Funcionários",
         description:
             "Sistema completo de cadastro com formulário validado, integração com ViaCEP para busca automática de endereço, persistência em localStorage e listagem com exclusão.",
@@ -162,15 +173,46 @@ export const otherProjects = [
     },
 ];
 
-export const skills = [
-    { name: "HTML", level: 95 },
-    { name: "CSS", level: 92 },
-    { name: "JavaScript", level: 85 },
-    { name: "React", level: 78 },
-    { name: "Git & GitHub", level: 88 },
-    { name: "Tailwind CSS", level: 80 },
-    { name: "TypeScript", level: 60 },
+
+export const skillGroups = [
+    {
+        category: "Frontend",
+        skills: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Design Responsivo",
+        ],
+    },
+    {
+        category: "UI & Design",
+        skills: [
+            "Acessibilidade",
+            "Design Systems",
+            "UI Components",
+            "Componentização",
+            "shadcn/ui",
+            "Storybook",
+        ],
+    },
+    {
+        category: "Ferramentas",
+        skills: [
+            "Git",
+            "GitHub",
+            "Vite",
+            "APIs REST",
+            "Prisma",
+            "localStorage",
+            "Context API",
+        ],
+    },
 ];
+
 
 export const faqs = [
     {
