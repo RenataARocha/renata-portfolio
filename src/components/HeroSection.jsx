@@ -30,25 +30,25 @@ export default function HeroSection({ scrollToSection }) {
           id="hero-heading"
           className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-fade-in"
         >
-          Olá, sou Renata
+          Renata Rocha
         </h1>
 
         <p
           className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          Desenvolvedora Front-end
+          Frontend Developer • React • UI/UX
         </p>
 
         <p
           className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in"
           style={{ animationDelay: "0.4s" }}
         >
-          Eu desenvolvo sites e aplicações modernas, rápidas e totalmente
-          responsivas, pensadas para transformar ideias em interfaces claras,
-          funcionais e fáceis de usar. Meu foco é criar experiências fluidas,
-          visualmente profissionais e alinhadas com a necessidade de cada
-          negócio.
+          Desenvolvo interfaces modernas, responsivas e escaláveis utilizando
+          React, JavaScript e foco em experiência do usuário. Tenho interesse
+          especial em componentização, design systems, acessibilidade e
+          construção de aplicações com interfaces organizadas, reutilizáveis e
+          intuitivas.
         </p>
 
         <div

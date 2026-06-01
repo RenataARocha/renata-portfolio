@@ -15,9 +15,16 @@ export default function AboutSection() {
 
         <article className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border border-orange-900/30 shadow-2xl hover:border-orange-800/50 transition-all">
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            Sou Desenvolvedora Front-end em transição de carreira, com formação
-            em Design Gráfico, o que me dá uma visão completa de estética,
-            usabilidade e experiência do usuário.
+            Sou Desenvolvedora Front-End em transição de carreira, com
+            experiência anterior em Design Gráfico, o que fortaleceu minha visão
+            sobre estética, comunicação visual e experiência do usuário.
+            Atualmente desenvolvo aplicações utilizando React, JavaScript e
+            tecnologias modernas do ecossistema Front-End, com foco em
+            componentização, responsividade, acessibilidade e organização de
+            interfaces. Tenho grande interesse em design systems, componentes
+            reutilizáveis e melhoria contínua da experiência do usuário, unindo
+            visão visual e desenvolvimento para criar aplicações modernas,
+            intuitivas e escaláveis.
           </p>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
             Trabalho diariamente com HTML, CSS, JavaScript e React, criando
