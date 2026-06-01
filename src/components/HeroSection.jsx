@@ -81,7 +81,7 @@ export default function HeroSection({ scrollToSection }) {
           </button>
 
           <a
-            href="/Renata Alexandre Rocha - Desenvolvedora Front End.pdf"
+            href="/Renata Alexandre Rocha -Frontend-Developer.pdf"
             download
             className="px-8 py-3 bg-gray-900 border border-orange-900/50 rounded-full font-semibold hover:bg-gray-800 hover:border-orange-700 transition-all flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-orange-500"
             aria-label="Baixar currículo em PDF"
