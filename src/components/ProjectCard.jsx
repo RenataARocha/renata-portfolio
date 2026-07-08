@@ -23,7 +23,7 @@ export default function ProjectCard({ project, variant = "featured" }) {
 
   return (
     <article
-      className={`group backdrop-blur-lg rounded-2xl overflow-hidden ${
+      className={`group flex flex-col h-full backdrop-blur-lg rounded-2xl overflow-hidden ${
         isFeatured
           ? "bg-gray-900/50 border border-orange-900/30"
           : "bg-gray-800/40 border border-gray-700/40"
@@ -51,7 +51,7 @@ export default function ProjectCard({ project, variant = "featured" }) {
         />
       </div>
 
-      <div className={isFeatured ? "p-6" : "p-5"}>
+      <div className={`flex flex-col flex-1 ${isFeatured ? "p-6" : "p-5"}`}>
         <h3
           className={`font-bold mb-3 transition-colors duration-300 ${
             isFeatured
@@ -99,7 +99,7 @@ export default function ProjectCard({ project, variant = "featured" }) {
           ))}
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <a
             href={project.link}
             target="_blank"
