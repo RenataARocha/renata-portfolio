@@ -73,6 +73,16 @@ export default function ProjectCard({ project, variant = "featured" }) {
               Novo
             </span>
           )}
+          {project.status && (
+            <span className="px-2 py-1 text-xs rounded-full bg-amber-600/20 text-amber-400 border border-amber-500/30">
+              {project.status}
+            </span>
+          )}
+          {project.goal && (
+            <span className="px-2 py-1 text-xs rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30">
+              {project.goal}
+            </span>
+          )}
         </div>
 
         <p className={`text-gray-400 mb-4 ${!isFeatured && "text-sm"}`}>

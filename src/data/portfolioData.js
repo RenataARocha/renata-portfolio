@@ -1,5 +1,18 @@
 export const featuredProjects = [
     {
+        title: "Organizadora do Lar (V2)",
+        description:
+            "Aplicativo de organização pessoal e doméstica que está sendo reconstruído utilizando React, com foco em desempenho, escalabilidade e futura publicação na Google Play Store. O projeto inclui gerenciamento de tarefas, rotina, metas e outras funcionalidades voltadas para a organização do dia a dia.",
+        image: "/assets/projetos/organizador-v2.png",
+        tech: ["React", "JavaScript", "Vite", "Tailwind CSS", "React Router", "Vercel"],
+        link: "https://organizadora-do-lar-react.vercel.app/",
+        github: "https://github.com/RenataARocha/organizadora-do-lar-react",
+        featured: true,
+        new: true,
+        status: "Em desenvolvimento",
+        goal: "Publicação na Google Play Store",
+    },
+    {
         title: "MoneyMap",
         description:
             "Aplicação de controle financeiro com dashboard, gráficos, categorias, autenticação e gerenciamento de transações.",
